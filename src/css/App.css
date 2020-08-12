@@ -1,0 +1,67 @@
+* {
+    font-family: Lato, serif;
+}
+
+.main {
+    margin-top: 10vh;
+    min-width: 80vw;
+}
+
+.template-plant-card {
+    margin-bottom: 2vh;
+    width: 15vw;
+}
+
+.template-plant-title {
+    font-size: 2vh;
+}
+
+
+h1 {
+    font-size: 1vh;
+    text-align: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.row {
+    border-radius: 2rem;
+}
+
+.plant-card {
+    width: 22vh;
+    height: 12vh;
+    margin: 0.5vw;
+}
+
+
+.garden-row {
+justify-content: center;
+}
+
+.first-column {
+    background-color: #cad2c5;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    background-color: rgba(212, 224, 155, 0.3);
+}
+
+.col-6 {
+    background-color: green;
+    background-color: rgba(212, 224, 155, 0.3);
+    border-right-style: solid;
+    border-left-style: solid;
+}
+
+.third-column {
+    background-color: blue;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: rgba(212, 224, 155, 0.3);
+}
+
+.template-plants {
+    width: 10vw;
+    margin-left: 4vw;
+    margin-top: 4vh;
+}
