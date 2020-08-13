@@ -1,23 +1,40 @@
 import React from 'react';
-import Plant from './Plant';
-import SearchBar from "./SearchBar";
-
-
+import TemplatePlant from './TemplatePlant';
 
 class FilteredList extends React.Component {
     state = {
+        allPlants : this.props.plants,
         plants : this.props.plants
+    };
+
+    searchRef = React.createRef();
+
+    filterResults = () => {
+        const keyWord = this.searchRef.current.value.toLowerCase();
+        const allPlants = this.state.allPlants;
+        let searchPlants = {};
+
+        Object.keys(allPlants).forEach(key => {
+            const lowerName = allPlants[key].name.toLowerCase();
+
+            if (lowerName.includes(keyWord)) {
+                searchPlants[key] = allPlants[key];
+                }
+            })
+        this.setState({plants : searchPlants})
     }
 
-    filterResults = e => {
-        console.log(e)
-    }
 
     render() { return (
         <div>
-            <SearchBar filterResults={this.filterResults}/>
+            <input className = "plant-search"
+                   ref={this.searchRef}
+                   onChange={this.filterResults}
+                   onFocus="this.value=''"
+                   type="text"
+                   placeholder="Search for plants!"/>
             {Object.keys(this.state.plants).map(key => (
-                <Plant
+                <TemplatePlant
                     key={key}
                     index={key}
                     details={this.state.plants[key]}

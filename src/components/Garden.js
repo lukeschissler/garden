@@ -1,28 +1,25 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import Plant from './Plant';
 import Row from 'react-bootstrap/Row';
 
 class Garden extends React.Component {
+
     renderGarden = key => {
-        const plant = this.props.plants[key]
-        return (
-                <Card className="plant-card">
-                    <Card.Body className="card-body">
-                        <Card.Title className="card-title">
-                            {plant.name}
-                        </Card.Title>
-                    </Card.Body>
-                    <Card.Text>
-                    {plant.watered}
-                    </Card.Text>
-                </Card>
-                )
-    };
+        const plant = this.props.garden[key]
+         return (
+            <Plant name={plant.name}
+            watered={plant.watered}
+            removeFromGarden={this.props.removeFromGarden}
+            index={key}
+            addHarvests={this.props.addHarvests}/>
+                )};
 
     render() {
+        const keys = Object.keys(this.props.garden)
+
         return (
             <Row className ="garden-row">
-                {this.props.garden.map(this.renderGarden)}
+                {keys.map(this.renderGarden)}
             </Row>
     ) }
 }
