@@ -1,22 +1,16 @@
 import React from 'react';
 
-import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
-
 class TemplatePlant extends React.Component {
 
     render() { return (
-        <Card className="template-plant-card">
-            <Card.Body>
-                <Card.Title>
-                    <span className="template-plant-title">{this.props.details["name"]}</span>
-                </Card.Title>
-            <Button className = "add-button"
-                    variant="outline-success"
-                    size="sm"
+        <div className="template-plant-div">
+
+            <img className = "add-image"
+                    src={"images/sprout.png"}
+                    alt="Sprout"
                     onClick={() => this.props.addToGarden(this.props.index)}/>
-            </Card.Body>
-        </Card>
+            <span className="template-plant-title">{this.props.details["name"]}</span>
+        </div>
     ) }
 }
 

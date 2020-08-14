@@ -17,6 +17,7 @@ class App extends React.Component {
     harvests : {}
   };
 
+
   addPlant = plant => {
     const plants = {...this.state.plants };
     plants[`plant${Date.now()}`] = plant;
@@ -25,6 +26,8 @@ class App extends React.Component {
 
   addToGarden = key => {
       const garden = {...this.state.garden }
+      const gardenPlant = {name : this.state.plants[key],
+                            watered :}
       garden[`gardenPlant${Date.now()}`] = this.state.plants[key];
       this.setState({ garden })
   }
@@ -41,22 +44,36 @@ class App extends React.Component {
       this.setState({harvests})
   }
 
+  componentDidMount() {
+
+      const localStorageRef = localStorage.getItem("garden");
+      if (localStorageRef) {
+          this.setState({ garden: JSON.parse(localStorageRef) });
+      }
+  }
+
+  componentDidUpdate() {
+      localStorage.setItem(
+          "garden",
+          JSON.stringify(this.state.garden)
+      );
+  }
+
   render() {
     return (
         <Container className="main">
             <Row className="row">
-                <Col className="first-column">
+                <Col className="col-2">
                     <h1>Plants</h1>
                     <FilteredList addToGarden={this.addToGarden}  plants={this.state.plants}/>
                 </Col>
-                <Col className="col-6">
+                <Col className="col-8">
                     <h1>Garden</h1>
                     <Garden garden={this.state.garden}
-                            plants={this.state.plants}
                             removeFromGarden={this.removeFromGarden}
                             addHarvests={this.addHarvests}/>
                 </Col>
-                <Col className="third-column">
+                <Col className="third-col">
                     <h1>Harvests</h1>
                     <Harvests harvests={this.state.harvests}
                               plants={this.state.plants}/>
