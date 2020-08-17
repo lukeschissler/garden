@@ -3,8 +3,6 @@ import Modal from 'react-bootstrap/Modal'
 
 class Plant extends React.Component {
     state = {
-        watered : this.props.watered,
-        note: this.props.note,
         animate : "",
         modalState: false
     };
@@ -14,11 +12,7 @@ class Plant extends React.Component {
     water = e => {
 
         this.toggleAnimation("-shake", 500)
-        const date = new Date();
-        const formatDate = date.getMonth().toString().concat('/', date.getDate())
-        const string = 'Watered: '.concat(formatDate)
-
-        this.setState({watered : string})
+        this.props.waterPlant(this.props.index)
     }
 
     toggleAnimation = (type, time) => {
@@ -30,28 +24,6 @@ class Plant extends React.Component {
 
     componentDidMount() {
         this.toggleAnimation("-shake", 500);
-
-        const waterStorageRef = localStorage.getItem(`water${this.props.index}`);
-
-        if (waterStorageRef) {
-            this.setState({watered: JSON.parse(waterStorageRef) });
-        }
-
-        const noteStorageRef = localStorage.getItem(`note${this.props.index}`);
-        if (noteStorageRef) {
-            this.setState({note: JSON.parse(noteStorageRef)});
-        }
-    }
-
-    componentDidUpdate() {
-        localStorage.setItem(
-            `water${this.props.index}`,
-            JSON.stringify(this.state.watered)
-        );
-        localStorage.setItem(
-            `note${this.props.index}`,
-            JSON.stringify(this.state.note)
-        );
     }
 
     addNote = () => {
@@ -73,7 +45,10 @@ class Plant extends React.Component {
         const ref = this.noteRef.current.value
         const msg = ref ? "Variety : ".concat(ref) : ""
 
-        this.setState({note:msg})
+        if (msg) {
+            this.props.addNote(this.props.index, msg)
+        }
+
         this.setState({modalState : false })
     }
 
@@ -98,7 +73,7 @@ class Plant extends React.Component {
                 <span className="plant-card-title">{this.props.name}</span>
             </div>
             <div className="descriptors">
-                <span>{this.state.note}<br/>{this.state.watered}</span>
+                <span>{this.props.note}<br/>{this.props.watered}</span>
             </div>
             <div>
                 <div className="icon-div">

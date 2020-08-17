@@ -1,12 +1,39 @@
 * {
-    font-family: Lato, serif;
+    font-family: Indie Flower, serif;
     border-color: #343a40;
     color: #343a40;
 }
 
+.heading-font-side {
+    font-size: 6vh;
+}
+
+.heading-font-mid {
+    font-size: 9vh;
+    font-weight: bold;
+}
+
+.heading-div {
+    text-align: center;
+    border-bottom-style: solid;
+    margin-bottom: 10px;
+
+}
+
+.top-img {
+    height: 7vh;
+    width: auto;
+    float: right;
+    margin-top: 6vh;
+    }
+
+.top-img-div {
+}
+
+
 .main {
-    margin-top: 10vh;
-    min-width: 85vw;
+    margin-top: 5vh;
+    min-width: 95vw;
 }
 
 .add-image {
@@ -47,6 +74,7 @@ h1 {
     text-align: center;
     padding-bottom: 1vh;
     padding-top: 2vh;
+    font-weight: bold;
 }
 
 .descriptors {
@@ -70,6 +98,8 @@ h1 {
     margin-bottom: 2vh;
     position: relative;
 }
+
+
 
 .plant-card-harvest {
     background: #fefae0;
@@ -130,25 +160,25 @@ h1 {
 
 .icon-1 {
     padding-left: 0.3vw;
-    height: 4.3vh;
+    height: 4.8vh;
     width: auto;
 }
 
 .icon-2 {
     padding-left: 0.3vw;
-    height: 4vh;
+    height: 4.5vh;
     width: auto;
 }
 
 .icon-3 {
     padding-left: 0.3vw;
-    height: 4.3vh;
+    height: 4.7vh;
     width: auto;
 }
 
 .icon-4 {
     padding-left: 0.3vw;
-    height: 4vh;
+    height: 4.5vh;
     width: auto;
 }
 
@@ -184,7 +214,7 @@ h1 {
 }
 
 .harvest-image {
-    height: 4vh;
+    height: 5vh;
     width: auto;
 }
 

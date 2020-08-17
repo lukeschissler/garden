@@ -11,12 +11,13 @@ class Garden extends React.Component {
             index={key}
             addHarvests={this.props.addHarvests}
             watered={plant.watered}
-            note={plant.note}/>
-                )};
+            note={plant.note}
+            waterPlant={this.props.waterPlants}
+            addNote={this.props.addNote}/>
+               )};
 
     render() {
         const keys = Object.keys(this.props.garden)
-
         return (
             <div className ="garden-row">
                 {keys.map(this.renderGarden)}
