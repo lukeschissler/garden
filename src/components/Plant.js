@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal'
 
+import Icon from './Icon';
+
 class Plant extends React.Component {
     state = {
         animate : "",
@@ -11,7 +13,7 @@ class Plant extends React.Component {
 
     water = e => {
 
-        this.toggleAnimation("-shake", 500)
+        this.toggleAnimation("-water", 500)
         this.props.waterPlant(this.props.index)
     }
 
@@ -43,7 +45,7 @@ class Plant extends React.Component {
 
     hideModal = () => {
         const ref = this.noteRef.current.value
-        const msg = ref ? "Variety : ".concat(ref) : ""
+        const msg = ref ? ref : ""
 
         if (msg) {
             this.props.addNote(this.props.index, msg)
@@ -77,22 +79,18 @@ class Plant extends React.Component {
             </div>
             <div>
                 <div className="icon-div">
-                    <img src={"images/watering-can.png"}
-                         className="icon-1"
-                         alt="can"
-                         onClick={this.water}/>
-                    <img src={"images/sickle.png"}
-                         className="icon-2"
-                         alt="bag"
-                         onClick={this.addHarvest}/>
-                    <img src={"images/wheelbarrow.png"}
-                         className="icon-3"
-                         alt="bag"
-                         onClick={this.addNote}/>
-                    <img src={"images/shovel.png"}
-                         className="icon-4"
-                         alt="shovel"
-                         onClick={this.removePlant}/>
+                    <Icon src={"images/watering-can.png"}
+                         height={"3rem"}
+                         fun={this.water}/>
+                    <Icon src={"images/sickle.png"}
+                         height={"2.8rem"}
+                         fun={this.addHarvest}/>
+                    <Icon src={"images/wheelbarrow.png"}
+                         height={"3rem"}
+                         fun={this.addNote}/>
+                    <Icon src={"images/shovel.png"}
+                         height={"2.8rem"}
+                         fun={this.removePlant}/>
                 </div>
             </div>
         </div>

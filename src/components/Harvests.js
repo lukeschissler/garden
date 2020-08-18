@@ -30,7 +30,6 @@ class Harvests extends React.Component {
     renderHarvests = name => {
         const harvest = this.props.harvests[name]
         const grainTally = this.countGrains(harvest)
-        console.log(grainTally)
 
         return (
             <div>

@@ -33,14 +33,16 @@ class FilteredList extends React.Component {
                    onFocus="this.value=''"
                    type="text"
                    placeholder="Search for plants!"/>
-            {Object.keys(this.state.plants).map(key => (
-                <TemplatePlant
-                    key={key}
-                    index={key}
-                    details={this.state.plants[key]}
-                    addToGarden={this.props.addToGarden}
-                />
-            ))}
+           <div  className = "template-plant-list">
+                {Object.keys(this.state.plants).map(key => (
+                    <TemplatePlant
+                        key={key}
+                        index={key}
+                        details={this.state.plants[key]}
+                        addToGarden={this.props.addToGarden}
+                    />
+                ))}
+            </div>
         </div>
     ) }
 }

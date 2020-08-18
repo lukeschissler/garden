@@ -19,9 +19,9 @@ class Garden extends React.Component {
     render() {
         const keys = Object.keys(this.props.garden)
         return (
-            <div className ="garden-row">
-                {keys.map(this.renderGarden)}
-            </div>
+                <div className ="garden-row">
+                    {keys.map(this.renderGarden)}
+                </div>
     ) }
 }
 
