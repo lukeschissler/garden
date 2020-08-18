@@ -1,4 +1,6 @@
 import React from 'react';
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
 class Icon extends React.Component {
     state = {
@@ -23,11 +25,19 @@ class Icon extends React.Component {
             }
 
         return (
-            <img src={this.props.src}
-                style={imgStyle}
-                 className={this.state.animate}
-                alt=""
-                onClick={this.toggleAnimation}/>
+            <OverlayTrigger
+                placement="bottom"
+                overlay={
+                    <Tooltip id="button-tooltip">
+                        {this.props.hoverMsg}
+                    </Tooltip>}
+                delay ={{show:600}}>
+                <img src={this.props.src}
+                    style={imgStyle}
+                     className={this.state.animate}
+                    alt=""
+                    onClick={this.toggleAnimation}/>
+            </OverlayTrigger>
 
     ) }
 }

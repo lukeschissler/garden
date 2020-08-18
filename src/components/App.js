@@ -7,6 +7,8 @@ import Garden from "./Garden"
 import Harvests from "./Harvests";
 import FilteredList from "./FilteredList"
 
+import Tooltip from 'react-bootstrap/Tooltip';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -96,10 +98,23 @@ class App extends React.Component {
   }
 
   render() {
+      const rightColStyle = {
+        paddingTop: "0.5rem",
+        borderBottomRightRadius: "1rem",
+        borderTopRightRadius: "1rem",
+        backgroundColor: "rgba(170, 204, 0, 0.4)"
+      }
+
+      const leftColStyle = {
+        borderTopLeftRadius: "1rem",
+        borderBottomLeftRadius: "1rem",
+        backgroundColor: "rgba(170, 204, 0, 0.4)"
+      }
+
     return (
         <Container className="main">
             <Row className="row">
-                <Col className="col-2">
+                <Col className="col-2" style={leftColStyle}>
                     <div className="heading-div">
                         <span className="heading-font-side">Plants</span>
                     </div>
@@ -108,16 +123,32 @@ class App extends React.Component {
                 <Col className="col-8">
                     <div className="heading-div">
                         <span className="heading-font-mid">Garden</span>
+                        <OverlayTrigger
+                            placement="bottom"
+                            overlay={
+                                <Tooltip id="button-tooltip">
+                                    Water all your Plants!
+                                </Tooltip>}
+                            delay ={{show:500}}>
                             <img src={"images/hose.png"}
                                  className="top-img"
                                 onClick={this.waterAll}
                                 alt=""
                             />
+                        </OverlayTrigger>
+                            <OverlayTrigger
+                                placement="bottom"
+                                overlay={
+                                    <Tooltip id="button-tooltip">
+                                        Remove all your Plants!
+                                    </Tooltip>}
+                                delay ={{show:300}}>
                             <img src={"images/tractor.png"}
                                  className="top-img"
                                  onClick={this.removeAll}
                                  alt=""
                             />
+                            </OverlayTrigger>
                     </div>
                     <Garden garden={this.state.garden}
                             removeFromGarden={this.removeFromGarden}
@@ -125,7 +156,7 @@ class App extends React.Component {
                             addHarvests={this.addHarvests}
                             addNote={this.addNote}/>
                 </Col>
-                <Col className="third-col">
+                <Col className="col-2" style={rightColStyle}>
                     <div className="heading-div">
                         <h1 className="heading-font-side">Harvests</h1>
                     </div>
