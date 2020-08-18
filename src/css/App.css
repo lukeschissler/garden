@@ -162,6 +162,9 @@
     display: flex;
 }
 
+.icon-div:hover {
+}
+
 .icon-active {
     animation: shadow-drop-center 0.2s;
 }
@@ -170,7 +173,6 @@
 .col-2 {
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
-
     background: rgba(170, 204, 0, 0.4);
 }
 

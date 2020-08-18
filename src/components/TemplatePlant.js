@@ -9,7 +9,8 @@ class TemplatePlant extends React.Component {
 
             <Icon src={"images/sprout.png"}
                   height="3rem"
-                  fun={() => this.props.addToGarden(this.props.index)}/>
+                  fun={() => this.props.addToGarden(this.props.index)}
+                    hoverMsg="Add this plant to your garden!"/>
             <span className="template-plant-title">{this.props.details["name"]}</span>
         </div>
     ) }

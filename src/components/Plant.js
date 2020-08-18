@@ -81,16 +81,20 @@ class Plant extends React.Component {
                 <div className="icon-div">
                     <Icon src={"images/watering-can.png"}
                          height={"3rem"}
-                         fun={this.water}/>
+                         fun={this.water}
+                         hoverMsg={"Water this plant"}/>
                     <Icon src={"images/sickle.png"}
                          height={"2.8rem"}
-                         fun={this.addHarvest}/>
+                         fun={this.addHarvest}
+                         hoverMsg={"Harvest from this plant"}/>
                     <Icon src={"images/wheelbarrow.png"}
                          height={"3rem"}
-                         fun={this.addNote}/>
+                         fun={this.addNote}
+                         hoverMsg={"Edit plant details/variety"}/>
                     <Icon src={"images/shovel.png"}
                          height={"2.8rem"}
-                         fun={this.removePlant}/>
+                         fun={this.removePlant}
+                          hoverMsg={"Remove this plant"}/>
                 </div>
             </div>
         </div>
