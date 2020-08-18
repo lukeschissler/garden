@@ -98,10 +98,23 @@ class App extends React.Component {
   }
 
   render() {
+      const rightColStyle = {
+        paddingTop: "0.5rem",
+        borderBottomRightRadius: "1rem",
+        borderTopRightRadius: "1rem",
+        backgroundColor: "rgba(170, 204, 0, 0.4)"
+      }
+
+      const leftColStyle = {
+        borderTopLeftRadius: "1rem",
+        borderBottomLeftRadius: "1rem",
+        backgroundColor: "rgba(170, 204, 0, 0.4)"
+      }
+
     return (
         <Container className="main">
             <Row className="row">
-                <Col className="col-2">
+                <Col className="col-2" style={leftColStyle}>
                     <div className="heading-div">
                         <span className="heading-font-side">Plants</span>
                     </div>
@@ -143,7 +156,7 @@ class App extends React.Component {
                             addHarvests={this.addHarvests}
                             addNote={this.addNote}/>
                 </Col>
-                <Col className="third-col">
+                <Col className="col-2" style={rightColStyle}>
                     <div className="heading-div">
                         <h1 className="heading-font-side">Harvests</h1>
                     </div>
