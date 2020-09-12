@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tiny Harvest
 
-## Available Scripts
+[![Netlify Status](https://api.netlify.com/api/v1/badges/375c70a5-0072-4a09-99fa-506256c07c95/deploy-status)](https://app.netlify.com/sites/ecstatic-feynman-facb9c/deploys)
 
-In the project directory, you can run:
+## Usage
 
-### `npm start`
+Add plants to your garden by clicking the sprout icon in the left column titled "Plants". You can also search for specific plants. Plant instances will be 
+added to the middle column titled "Garden." 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For each plant you can:
+  1. Update when it was watered by clicking the watering can icon.
+  2. Harvest from the plant by clicking the scythe icon.
+  3. Add details to the plant by clicking the wheelbarrow icon.
+  4. Remove the plant by clicking the shovel icon.
+  
+The hose button will water all plants in your garden, and the tractor button will remove all plants from your garden. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Harvests for each plant type are kept in the column titled "Harvests," and includes dynamic icons based on the number of harvests from that plant type.
 
-### `npm test`
+Your garden is kept in local storage, and will be persistant between browser sessions.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Link
 
-### `npm run build`
+[Access the app here!](https://www.tiny-harvest.com/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+If you have anything you'd like to contribute to the project, feel free to submit a pull request or reach out to me at lukeschissler@gmail.com
