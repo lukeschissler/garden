@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/375c70a5-0072-4a09-99fa-506256c07c95/deploy-status)](https://app.netlify.com/sites/ecstatic-feynman-facb9c/deploys)
 
+![](example.gif)
+
 ## Usage
 
 Add plants to your garden by clicking the sprout icon in the left column titled "Plants". You can also search for specific plants. Plant instances will be 
